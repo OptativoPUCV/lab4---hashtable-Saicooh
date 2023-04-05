@@ -63,7 +63,7 @@ HashMap *createMap(long capacity)
   mapa -> buckets = buckets;
   mapa -> size = 0;
   mapa -> capacity = capacity;
-  mapa -> current = -1
+  mapa -> current = -1;
   
   return mapa;
 }
