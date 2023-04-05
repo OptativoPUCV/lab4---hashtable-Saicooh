@@ -51,16 +51,16 @@ void insertMap(HashMap *map, char *key, void *value)
   
   Pair *par = map -> buckets[bucketBusc];
 
-  while(pair != NULL && strcmp(map -> key, key) != 0))
+  while(par != NULL && strcmp(map -> key, key) != 0))
   {
     prev = par;
     par = par -> next;
   }
 
-  if (pair == NULL) return;
+  if (par == NULL) return;
 
-  pair -> key = NULL;
-  pair -> value = NULL;
+  par -> key = NULL;
+  par -> value = NULL;
 
   map -> size--;
 }
