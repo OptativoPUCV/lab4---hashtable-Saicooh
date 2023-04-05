@@ -241,3 +241,20 @@ hashmap.c:50:9: error: variable ‘prev’ set but not used [-Werror=unused-but-
 cc1: all warnings being treated as errors
 Compilation failed
 d641b43
+Wed 05 Apr 2023 03:47:19 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:48:20: error: implicit declaration of function ‘getBucketIndex’ [-Werror=implicit-function-declaration]
+   48 |   int bucketBusc = getBucketIndex(map, key);
+      |                    ^~~~~~~~~~~~~~
+hashmap.c:57:15: error: ‘Pair’ has no member named ‘next’
+   57 |     par = par -> next;
+      |               ^~
+hashmap.c:50:9: error: variable ‘prev’ set but not used [-Werror=unused-but-set-variable]
+   50 |   Pair *prev = NULL;
+      |         ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+b2c7547

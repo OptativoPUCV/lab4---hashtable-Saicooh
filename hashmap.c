@@ -45,7 +45,7 @@ int is_equal(void *key1, void *key2)
 
 void insertMap(HashMap *map, char *key, void *value)
 {
-  int bucketBusc = hash(map, key);
+  int bucketBusc = getBucketIndex(map, key);
   
   Pair *prev = NULL;
   
