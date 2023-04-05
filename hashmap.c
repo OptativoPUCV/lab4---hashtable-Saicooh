@@ -45,6 +45,25 @@ int is_equal(void *key1, void *key2)
 
 void insertMap(HashMap *map, char *key, void *value)
 {
+  int bucketBusc = hash(map, key);
+  pair *prev = NULL;
+  
+  pair *par = map -> buckets[bucketBusc];
+
+  while(pair != NULL && strcmp(map -> key, key) != 0))
+  {
+    prev = par;
+    par = par -> next;
+  }
+
+  if (pair == NULL) return;
+
+  pair -> key = NULL;
+  pair -> value = NULL;
+
+  map -> size--;
+  
+
   
 }
 
@@ -70,8 +89,7 @@ HashMap *createMap(long capacity)
 
 void eraseMap(HashMap *map, char *key)
 {    
-
-
+  
 }
 
 Pair *searchMap(HashMap *map,  char *key)
