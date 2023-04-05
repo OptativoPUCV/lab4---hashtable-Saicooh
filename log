@@ -8,3 +8,20 @@ Wed 05 Apr 2023 03:10:00 PM UTC:
  tests:  0|6
 total_score: 0/70
 71c25e5
+Wed 05 Apr 2023 03:20:41 PM UTC: 
+ hashmap.c | 10 +++++++++-
+ 1 file changed, 9 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘createMap’:
+hashmap.c:65:30: error: expected ‘;’ before ‘mapa’
+   65 |   mapa -> capacity = capacity
+      |                              ^
+      |                              ;
+   66 |   mapa -> current = -1
+      |   ~~~~                        
+hashmap.c:69:1: error: control reaches end of non-void function [-Werror=return-type]
+   69 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+6a06a1d
