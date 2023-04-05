@@ -46,9 +46,10 @@ int is_equal(void *key1, void *key2)
 void insertMap(HashMap *map, char *key, void *value)
 {
   int bucketBusc = hash(map, key);
-  pair *prev = NULL;
   
-  pair *par = map -> buckets[bucketBusc];
+  Pair *prev = NULL;
+  
+  Pair *par = map -> buckets[bucketBusc];
 
   while(pair != NULL && strcmp(map -> key, key) != 0))
   {
@@ -62,9 +63,6 @@ void insertMap(HashMap *map, char *key, void *value)
   pair -> value = NULL;
 
   map -> size--;
-  
-
-  
 }
 
 void enlarge(HashMap *map)

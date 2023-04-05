@@ -101,3 +101,44 @@ hashmap.c:49:9: error: variable ‘prev’ set but not used [-Werror=unused-but-
 cc1: all warnings being treated as errors
 Compilation failed
 4c2d0c2
+Wed 05 Apr 2023 03:43:12 PM UTC: 
+ hashmap.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:48:25: error: passing argument 1 of ‘hash’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+   48 |   int bucketBusc = hash(map, key);
+      |                         ^~~
+      |                         |
+      |                         HashMap * {aka struct HashMap *}
+hashmap.c:28:17: note: expected ‘char *’ but argument is of type ‘HashMap *’ {aka ‘struct HashMap *’}
+   28 | long hash(char *key, long capacity)
+      |           ~~~~~~^~~
+hashmap.c:48:30: error: passing argument 2 of ‘hash’ makes integer from pointer without a cast [-Werror=int-conversion]
+   48 |   int bucketBusc = hash(map, key);
+      |                              ^~~
+      |                              |
+      |                              char *
+hashmap.c:28:27: note: expected ‘long int’ but argument is of type ‘char *’
+   28 | long hash(char *key, long capacity)
+      |                      ~~~~~^~~~~~~~
+hashmap.c:54:9: error: ‘pair’ undeclared (first use in this function); did you mean ‘par’?
+   54 |   while(pair != NULL && strcmp(map -> key, key) != 0))
+      |         ^~~~
+      |         par
+hashmap.c:54:9: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:54:36: error: ‘HashMap’ {aka ‘struct HashMap’} has no member named ‘key’
+   54 |   while(pair != NULL && strcmp(map -> key, key) != 0))
+      |                                    ^~
+hashmap.c:54:54: error: expected statement before ‘)’ token
+   54 |   while(pair != NULL && strcmp(map -> key, key) != 0))
+      |                                                      ^
+hashmap.c:57:15: error: ‘Pair’ has no member named ‘next’
+   57 |     par = par -> next;
+      |               ^~
+hashmap.c:50:9: error: variable ‘prev’ set but not used [-Werror=unused-but-set-variable]
+   50 |   Pair *prev = NULL;
+      |         ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+de334d4
