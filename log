@@ -258,3 +258,25 @@ hashmap.c:50:9: error: variable ‘prev’ set but not used [-Werror=unused-but-
 cc1: all warnings being treated as errors
 Compilation failed
 b2c7547
+Thu 06 Apr 2023 03:42:02 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:48:30: error: passing argument 2 of ‘hash’ makes integer from pointer without a cast [-Werror=int-conversion]
+   48 |   int bucketBusc = hash(key, key);
+      |                              ^~~
+      |                              |
+      |                              char *
+hashmap.c:28:27: note: expected ‘long int’ but argument is of type ‘char *’
+   28 | long hash(char *key, long capacity)
+      |                      ~~~~~^~~~~~~~
+hashmap.c:57:15: error: ‘Pair’ has no member named ‘next’
+   57 |     par = par -> next;
+      |               ^~
+hashmap.c:50:9: error: variable ‘prev’ set but not used [-Werror=unused-but-set-variable]
+   50 |   Pair *prev = NULL;
+      |         ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+c3d4b77
