@@ -401,3 +401,14 @@ hashmap.c:48:8: note: declared here
       |        ^~~~
 Compilation failed
 12cdf91
+Wed 12 Apr 2023 11:57:45 PM UTC: 
+ hashmap.c | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:57:15: error: comparison between pointer and integer [-Werror]
+   57 |     if (clave == hash) return;
+      |               ^~
+cc1: all warnings being treated as errors
+Compilation failed
+6495d7e

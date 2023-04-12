@@ -45,24 +45,24 @@ int is_equal(void *key1, void *key2)
 
 void insertMap(HashMap *map, char *key, void *value)
 {
-  long hash = hash(*key, map->capacity);
+  long clave = hash(key, map -> capacity);
 
-  int indice = hash;
+  int indice = clave;
   
-  while (map -> buckets[indice] != NULL)
+  while (map -> buckets[indice] != NULL && map -> buckets[indice] -> key != NULL)
   {
     if (map -> buckets[indice] -> key != NULL && strcmp(map -> buckets[indice] -> key, key) == 0) return;
-    indice = (indice + 1) % map -> capacity;
+    indice = (clave + 1) % map -> capacity;
     
-    if (indice == hash) return;
+    if (clave == hash) return;
   }
 
-  map -> buckets[indice] = malloc(sizeof(Pair));
-  map -> buckets[indice] -> key = key;
-  map -> buckets[indice] -> value = value;
+  map -> buckets[clave] = malloc(sizeof(Pair));
+  map -> buckets[clave] -> key = key;
+  map -> buckets[clave] -> value = value;
 
   map -> size++;
-  map -> current = indice;
+  map -> current = clave;
 }
 
 void enlarge(HashMap *map)
