@@ -45,29 +45,26 @@ int is_equal(void *key1, void *key2)
 
 void insertMap(HashMap *map, char *key, void *value)
 {
-  int bucketBusc = hash(key, key);
-  
-  Pair *prev = NULL;
-  
-  Pair *par = map -> buckets[bucketBusc];
+  int i = hash(key) % map -> capacity;
 
-  while(par != NULL && strcmp(par -> key, key) != 0)
+  while (map -> buckets[i].key != NULL && strcmp(map -> buckets[i].key, key) != 0) 
   {
-    prev = par;
-    par = par -> next;
+    i = (i + 1) % map -> capacity;
   }
 
-  if (par == NULL) return;
+  if (map -> buckets[i].key == NULL)
+  {
+    map -> buckets[i].key = key;
+    map -> size++;
+  }
 
-  par -> key = NULL;
-  par -> value = NULL;
-
-  map -> size--;
+  map -> buckets[i].value = value;
+  map -> current = i;
 }
 
 void enlarge(HashMap *map)
 {
-  enlarge_called = 1; //no borrar (testing purposes)
+  enlarge_called = 1; // no borrar (testing purposes)
 }
 
 

@@ -280,3 +280,36 @@ hashmap.c:50:9: error: variable ‘prev’ set but not used [-Werror=unused-but-
 cc1: all warnings being treated as errors
 Compilation failed
 c3d4b77
+Wed 12 Apr 2023 11:32:33 PM UTC: 
+ hashmap.c | 23 ++++++++++-------------
+ 1 file changed, 10 insertions(+), 13 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:48:11: error: too few arguments to function ‘hash’
+   48 |   int i = hash(key) % map -> capacity;
+      |           ^~~~
+hashmap.c:28:6: note: declared here
+   28 | long hash(char *key, long capacity)
+      |      ^~~~
+hashmap.c:50:27: error: ‘*(map->buckets + (sizetype)((long unsigned int)i * 8))’ is a pointer; did you mean to use ‘->’?
+   50 |   while (map -> buckets[i].key != NULL && strcmp(map -> buckets[i].key, key) != 0)
+      |                           ^
+      |                           ->
+hashmap.c:50:67: error: ‘*(map->buckets + (sizetype)((long unsigned int)i * 8))’ is a pointer; did you mean to use ‘->’?
+   50 |   while (map -> buckets[i].key != NULL && strcmp(map -> buckets[i].key, key) != 0)
+      |                                                                   ^
+      |                                                                   ->
+hashmap.c:55:24: error: ‘*(map->buckets + (sizetype)((long unsigned int)i * 8))’ is a pointer; did you mean to use ‘->’?
+   55 |   if (map -> buckets[i].key == NULL)
+      |                        ^
+      |                        ->
+hashmap.c:57:22: error: ‘*(map->buckets + (sizetype)((long unsigned int)i * 8))’ is a pointer; did you mean to use ‘->’?
+   57 |     map -> buckets[i].key = key;
+      |                      ^
+      |                      ->
+hashmap.c:61:20: error: ‘*(map->buckets + (sizetype)((long unsigned int)i * 8))’ is a pointer; did you mean to use ‘->’?
+   61 |   map -> buckets[i].value = value;
+      |                    ^
+      |                    ->
+Compilation failed
+90e493d
