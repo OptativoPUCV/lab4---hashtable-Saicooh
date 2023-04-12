@@ -313,3 +313,16 @@ hashmap.c:61:20: error: ‘*(map->buckets + (sizetype)((long unsigned int)i * 8)
       |                    ->
 Compilation failed
 90e493d
+Wed 12 Apr 2023 11:33:28 PM UTC: 
+ hashmap.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:48:11: error: too few arguments to function ‘hash’
+   48 |   int i = hash(key) % map -> capacity;
+      |           ^~~~
+hashmap.c:28:6: note: declared here
+   28 | long hash(char *key, long capacity)
+      |      ^~~~
+Compilation failed
+d4446ca

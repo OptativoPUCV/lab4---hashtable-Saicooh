@@ -47,18 +47,18 @@ void insertMap(HashMap *map, char *key, void *value)
 {
   int i = hash(key) % map -> capacity;
 
-  while (map -> buckets[i].key != NULL && strcmp(map -> buckets[i].key, key) != 0) 
+  while (map -> buckets[i] -> key != NULL && strcmp(map -> buckets[i] -> key, key) != 0) 
   {
     i = (i + 1) % map -> capacity;
   }
 
-  if (map -> buckets[i].key == NULL)
+  if (map -> buckets[i] -> key == NULL)
   {
-    map -> buckets[i].key = key;
+    map -> buckets[i] -> key = key;
     map -> size++;
   }
 
-  map -> buckets[i].value = value;
+  map -> buckets[i] -> value = value;
   map -> current = i;
 }
 
