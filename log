@@ -346,3 +346,19 @@ Wed 12 Apr 2023 11:39:36 PM UTC:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 f493a70
+Wed 12 Apr 2023 11:46:36 PM UTC: 
+ hashmap.c | 23 +++++++++++++----------
+ 1 file changed, 13 insertions(+), 10 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:48:14: error: called object ‘hash’ is not a function or function pointer
+   48 |   int hash = hash(key, map->capacity);
+      |              ^~~~
+hashmap.c:48:7: note: declared here
+   48 |   int hash = hash(key, map->capacity);
+      |       ^~~~
+hashmap.c:64:10: error: expected identifier before ‘(’ token
+   64 |   map -> (size)++;
+      |          ^
+Compilation failed
+fc31758
