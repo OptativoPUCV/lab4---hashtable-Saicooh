@@ -388,3 +388,16 @@ hashmap.c:48:8: note: declared here
       |        ^~~~
 Compilation failed
 fa7254e
+Wed 12 Apr 2023 11:47:53 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:48:15: error: called object ‘hash’ is not a function or function pointer
+   48 |   long hash = hash(*key, map->capacity);
+      |               ^~~~
+hashmap.c:48:8: note: declared here
+   48 |   long hash = hash(*key, map->capacity);
+      |        ^~~~
+Compilation failed
+12cdf91
