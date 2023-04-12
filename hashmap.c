@@ -61,7 +61,7 @@ void insertMap(HashMap *map, char *key, void *value)
   map -> buckets[indice] -> key = key;
   map -> buckets[indice] -> value = value;
 
-  map -> (size)++;
+  map -> size++;
   map -> current = indice;
 }
 
