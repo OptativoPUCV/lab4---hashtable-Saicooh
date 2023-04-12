@@ -45,7 +45,7 @@ int is_equal(void *key1, void *key2)
 
 void insertMap(HashMap *map, char *key, void *value)
 {
-  int hash = hash(key, map->capacity);
+  long hash = hash(key, map->capacity);
 
   int indice = hash;
   
