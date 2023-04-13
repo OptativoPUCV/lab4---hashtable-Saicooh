@@ -470,3 +470,14 @@ Thu 13 Apr 2023 12:22:03 AM UTC:
  tests:  8|3
 total_score: 40/70
 a60969d
+Thu 13 Apr 2023 12:38:45 AM UTC: 
+ hashmap.c | 24 +++++++++++++++++++-----
+ 1 file changed, 19 insertions(+), 5 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘eraseMap’:
+hashmap.c:103:37: error: statement with no effect [-Werror=unused-value]
+  103 |       map -> buckets[indice] -> key == NULL;
+      |                                     ^
+cc1: all warnings being treated as errors
+Compilation failed
+618bf42

@@ -74,16 +74,11 @@ void insertMap(HashMap *map, char *key, void *value)
   map -> current = indice;
 }
 
-void enlarge(HashMap *map)
-{
-  enlarge_called = 1; // no borrar (testing purposes)
-}
-
 Pair *searchMap(HashMap *map,  char *key)
 {
   long indice = hash(key, map -> capacity);
 
-   while (map -> buckets[indice] != NULL && map -> buckets[indice] -> key != NULL)
+  while (map -> buckets[indice] != NULL && map -> buckets[indice] -> key != NULL)
   {
     if (is_equal(key, map -> buckets[indice] -> key))
     {
@@ -97,12 +92,23 @@ Pair *searchMap(HashMap *map,  char *key)
 
 void eraseMap(HashMap *map, char *key)
 {    
-  
+  long indice = hash(key, map -> capacity);
+
+  while (map -> buckets[indice] != NULL && map -> buckets[indice] -> key != NULL)
+  {
+    if (is_equal(key, map -> buckets[indice] -> key))
+    {
+      map -> current = indice;
+      map -> size--;
+      map -> buckets[indice] -> key == NULL;
+      return;
+    }
+    indice = (indice + 1) % map -> capacity;
+  }
 }
 
 Pair *firstMap(HashMap *map)
 {
-
   return NULL;
 }
 
@@ -111,3 +117,10 @@ Pair *nextMap(HashMap *map)
 
   return NULL;
 }
+
+void enlarge(HashMap *map)
+{
+  enlarge_called = 1; // no borrar (testing purposes)
+}
+
+
