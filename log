@@ -453,3 +453,14 @@ Thu 13 Apr 2023 12:07:29 AM UTC:
  tests:  5|4
 total_score: 30/70
 407c63f
+Thu 13 Apr 2023 12:21:55 AM UTC: 
+ hashmap.c | 43 ++++++++++++++++++++++++++-----------------
+ 1 file changed, 26 insertions(+), 17 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:90:22: error: statement with no effect [-Werror=unused-value]
+   90 |       map -> current == indice;
+      |       ~~~~~~~~~~~~~~~^~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+79413be

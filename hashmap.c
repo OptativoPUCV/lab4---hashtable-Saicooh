@@ -38,17 +38,31 @@ long hash(char *key, long capacity)
 
 int is_equal(void *key1, void *key2)
 {
-  if (key1==NULL || key2==NULL) return 0;
+  if (key1 == NULL || key2 == NULL) return 0;
   if (strcmp((char*) key1, (char*) key2) == 0) return 1;
+  
   return 0;
 }
 
+HashMap *createMap(long capacity)
+{
+  HashMap *mapa = malloc(sizeof(HashMap));
+  
+  Pair **buckets = calloc(capacity, sizeof(HashMap));
+
+  mapa -> buckets = buckets;
+  mapa -> size = 0;
+  mapa -> capacity = capacity;
+  mapa -> current = -1;
+  
+  return mapa;
+}
 
 void insertMap(HashMap *map, char *key, void *value)
 {
   long indice = hash(key, map -> capacity);
   
-  while (map -> buckets[indice] != NULL )
+  while (map -> buckets[indice] != NULL && map -> buckets[indice] -> key != NULL)
   {
     if (is_equal(key, map -> buckets[indice] -> key)) return;
     indice = (indice + 1) % map -> capacity;
@@ -65,29 +79,25 @@ void enlarge(HashMap *map)
   enlarge_called = 1; // no borrar (testing purposes)
 }
 
-
-HashMap *createMap(long capacity)
+Pair *searchMap(HashMap *map,  char *key)
 {
-  HashMap *mapa = malloc(sizeof(HashMap));
-  
-  Pair **buckets = calloc(capacity, sizeof(HashMap));
+  long indice = hash(key, map -> capacity);
 
-  mapa -> buckets = buckets;
-  mapa -> size = 0;
-  mapa -> capacity = capacity;
-  mapa -> current = -1;
-  
-  return mapa;
+   while (map -> buckets[indice] != NULL && map -> buckets[indice] -> key != NULL)
+  {
+    if (is_equal(key, map -> buckets[indice] -> key))
+    {
+      map -> current == indice;
+      return map -> buckets[indice];
+    }
+    indice = (indice + 1) % map -> capacity;
+  }
+  return NULL;
 }
 
 void eraseMap(HashMap *map, char *key)
 {    
   
-}
-
-Pair *searchMap(HashMap *map,  char *key)
-{   
-  return NULL;
 }
 
 Pair *firstMap(HashMap *map)
