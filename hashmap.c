@@ -56,11 +56,12 @@ void insertMap(HashMap *map, char *key, void *value)
     
     if (clave == indice) return;
   }
+ 
+  //map -> buckets[indice] = malloc(sizeof(Pair));
+  //map -> buckets[indice] -> key = key;
+  //map -> buckets[indice] -> value = value;
 
-   
-  map -> buckets[indice] = malloc(sizeof(Pair));
-  map -> buckets[indice] -> key = key;
-  map -> buckets[indice] -> value = value;
+  map -> buckets[indice] = createPair(key, value);
 
   map -> size++;
   map -> current = indice;
