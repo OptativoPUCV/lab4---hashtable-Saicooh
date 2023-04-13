@@ -87,7 +87,7 @@ Pair *searchMap(HashMap *map,  char *key)
   {
     if (is_equal(key, map -> buckets[indice] -> key))
     {
-      map -> current == indice;
+      map -> current = indice;
       return map -> buckets[indice];
     }
     indice = (indice + 1) % map -> capacity;
