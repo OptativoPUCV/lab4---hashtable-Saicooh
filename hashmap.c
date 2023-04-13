@@ -100,7 +100,7 @@ void eraseMap(HashMap *map, char *key)
     {
       map -> current = indice;
       map -> size--;
-      map -> buckets[indice] -> key == NULL;
+      map -> buckets[indice] -> key = NULL;
       return;
     }
     indice = (indice + 1) % map -> capacity;
