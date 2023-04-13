@@ -51,18 +51,19 @@ void insertMap(HashMap *map, char *key, void *value)
   
   while (map -> buckets[indice] != NULL && map -> buckets[indice] -> key != NULL)
   {
-    if (map -> buckets[indice] -> key != NULL && strcmp(map -> buckets[indice] -> key, key) == 0) return;
-    indice = (clave + 1) % map -> capacity;
+    if (is_equal(key, map -> buckets[indice] -> key)) return;
+    indice = (indice + 1) % map -> capacity;
     
-    if (clave == hash) return;
+    if (clave == indice) return;
   }
 
-  map -> buckets[clave] = malloc(sizeof(Pair));
-  map -> buckets[clave] -> key = key;
-  map -> buckets[clave] -> value = value;
+  if 
+  map -> buckets[indice] = malloc(sizeof(Pair));
+  map -> buckets[indice] -> key = key;
+  map -> buckets[indice] -> value = value;
 
   map -> size++;
-  map -> current = clave;
+  map -> current = indice;
 }
 
 void enlarge(HashMap *map)

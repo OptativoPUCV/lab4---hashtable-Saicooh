@@ -412,3 +412,14 @@ hashmap.c:57:15: error: comparison between pointer and integer [-Werror]
 cc1: all warnings being treated as errors
 Compilation failed
 6495d7e
+Thu 13 Apr 2023 12:01:55 AM UTC: 
+ hashmap.c | 15 ++++++++-------
+ 1 file changed, 8 insertions(+), 7 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:61:3: error: expected ‘(’ before ‘map’
+   61 |   map -> buckets[indice] = malloc(sizeof(Pair));
+      |   ^~~
+      |   (
+Compilation failed
+25061fc
