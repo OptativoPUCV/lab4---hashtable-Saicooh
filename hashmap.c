@@ -120,7 +120,7 @@ Pair *nextMap(HashMap *map)
 
 void enlarge(HashMap *map)
 {
-  long capacidadAnterior = map -> capacity;}
+  long capacidadAnterior = map -> capacity;
   map -> capacity =* 2;
   Pair **bucketsAnteriores = map -> buckets;
 
