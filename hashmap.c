@@ -126,12 +126,12 @@ void enlarge(HashMap *map)
 
   map -> buckets = calloc(map -> capacity, sizeof(Pair));
 
-  long i = 0;
+  long i;
 
   for (i = 0 ; i < capacidadAnterior ; i++)
   {
     Pair *par = bucketsAnteriores;
-    if(par & par -> key) insertMap(map, par -> key, par -> value);
+    if(par && par -> key) insertMap(map, par -> key, par -> value);
   }
 
   free(bucketsAnteriores);
