@@ -129,7 +129,7 @@ Pair *nextMap(HashMap *map)
 
   long i;
   
-  for (i = map -> current ; i < map -> capacity ; i++)
+  for (i = map -> current + 1 ; i < map -> capacity ; i++)
   {
     if(map -> buckets[i] && map -> buckets[i]->key)
     {
