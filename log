@@ -685,3 +685,19 @@ hashmap.c:134:12: error: invalid operands to binary & (have ‘Pair *’ and ‘
 cc1: all warnings being treated as errors
 Compilation failed
 67846ef
+Fri 12 May 2023 06:43:30 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:133:17: error: initialization of ‘Pair *’ from incompatible pointer type ‘Pair **’ [-Werror=incompatible-pointer-types]
+  133 |     Pair *par = bucketsAnteriores;
+      |                 ^~~~~~~~~~~~~~~~~
+hashmap.c:134:12: error: invalid operands to binary & (have ‘Pair *’ and ‘char *’)
+  134 |     if(par & par -> key) insertMap(map, par -> key, par -> value);
+      |            ^ ~~~~~~~~~~
+      |                  |
+      |                  char *
+cc1: all warnings being treated as errors
+Compilation failed
+d8b57e6
