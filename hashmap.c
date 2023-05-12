@@ -130,7 +130,7 @@ void enlarge(HashMap *map)
 
   for (i = 0 ; i < capacidadAnterior ; i++)
   {
-    Pair *par = bucketsAnteriores;
+    Pair *par = bucketsAnteriores[i];
     if(par && par -> key) insertMap(map, par -> key, par -> value);
   }
 
