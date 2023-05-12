@@ -121,7 +121,7 @@ Pair *nextMap(HashMap *map)
 void enlarge(HashMap *map)
 {
   long capacidadAnterior = map -> capacity;
-  map -> capacity =* 2;
+  map -> capacity *= 2;
   Pair **bucketsAnteriores = map -> buckets;
 
   map -> buckets = calloc(map -> capacity, sizeof(Pair));
