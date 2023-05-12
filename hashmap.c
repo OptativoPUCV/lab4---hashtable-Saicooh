@@ -125,7 +125,18 @@ Pair *firstMap(HashMap *map)
 
 Pair *nextMap(HashMap *map)
 {
+  if (map -> current == -1) return NULL;
 
+  long i;
+  
+  for (i = map -> current ; i < map -> capacity ; i++)
+  {
+    if(map -> buckets[i] && map -> buckets[i]->key)
+    {
+      map -> current = i;
+      return map -> buckets[i];
+    }
+  }
   return NULL;
 }
 
