@@ -120,6 +120,22 @@ Pair *nextMap(HashMap *map)
 
 void enlarge(HashMap *map)
 {
+  long capacidadAnterior = map -> capacidad;}
+  map -> capacity =* 2;
+  Pair **bucketsAnteriores = map -> buckets;
+
+  map -> buckets = calloc(map -> capacity, sizeof(Pair));
+
+  long i = 0;
+
+  for (i ; i < capacidadAnterior ; i++)
+  {
+    Pair *par = bucketsAnteriores;
+    if(pair & pair -> key) insertMap(map, pair -> key, pair -> value);
+  }
+
+  free(bucketsAnteriores);
+
   enlarge_called = 1; // no borrar (testing purposes)
 }
 
