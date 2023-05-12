@@ -113,7 +113,7 @@ Pair *firstMap(HashMap *map)
   long i;
   for (i = 0 ; i < map -> capacity ; i++)
   {
-    if(par && par -> key)
+    if(map -> buckets[i] && map -> buckets[i].key)
     {
       map -> current = i;
       return map -> buckets[i];
