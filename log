@@ -642,3 +642,27 @@ hashmap.c:133:11: error: unused variable ‘par’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 7cb846d
+Fri 12 May 2023 06:43:10 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:131:3: error: statement with no effect [-Werror=unused-value]
+  131 |   for (i ; i < capacidadAnterior ; i++)
+      |   ^~~
+hashmap.c:133:17: error: initialization of ‘Pair *’ from incompatible pointer type ‘Pair **’ [-Werror=incompatible-pointer-types]
+  133 |     Pair *par = bucketsAnteriores;
+      |                 ^~~~~~~~~~~~~~~~~
+hashmap.c:134:12: error: invalid operands to binary & (have ‘Pair *’ and ‘char *’)
+  134 |     if(par & par -> key) insertMap(map, pair -> key, pair -> value);
+      |            ^ ~~~~~~~~~~
+      |                  |
+      |                  char *
+hashmap.c:134:41: error: ‘pair’ undeclared (first use in this function); did you mean ‘par’?
+  134 |     if(par & par -> key) insertMap(map, pair -> key, pair -> value);
+      |                                         ^~~~
+      |                                         par
+hashmap.c:134:41: note: each undeclared identifier is reported only once for each function it appears in
+cc1: all warnings being treated as errors
+Compilation failed
+220fe92
