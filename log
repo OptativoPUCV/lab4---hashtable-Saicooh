@@ -718,3 +718,14 @@ Fri 12 May 2023 06:44:05 PM UTC:
  tests:  12|1
 total_score: 60/70
 e189073
+Fri 12 May 2023 08:02:36 PM UTC: 
+ hashmap.c | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+In file included from test.c:4:
+hashmap.c: In function ‘firstMap’:
+hashmap.c:116:17: error: ‘bucketsAnteriores’ undeclared (first use in this function)
+  116 |     Pair *par = bucketsAnteriores[i];
+      |                 ^~~~~~~~~~~~~~~~~
+hashmap.c:116:17: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+b0c2e68

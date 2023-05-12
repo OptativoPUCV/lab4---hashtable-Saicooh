@@ -109,6 +109,18 @@ void eraseMap(HashMap *map, char *key)
 
 Pair *firstMap(HashMap *map)
 {
+  map -> current = -1;
+  long i;
+  for (i = 0 ; i < map -> capacity ; i++)
+  {
+    Pair *par = bucketsAnteriores[i];
+    if(par && par -> key)
+    {
+      map -> current = i;
+      return map -> buckets[i];
+    }
+  }
+  
   return NULL;
 }
 
